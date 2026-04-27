@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-primary-blue: #7EC8E3;
+  --color-soft-sky: #D9F3FF;
+  --color-light-bg: #F5FBFF;
+  --color-deep-text: #123B5D;
+  --color-muted-text: #6B879A;
+  --color-accent-gold: #F4C95D;
+  --color-white: #FFFFFF;
+}
