@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 function smoothScrollTo(id: string) {
@@ -20,7 +21,39 @@ function smoothScrollTo(id: string) {
   requestAnimationFrame(animate);
 }
 
+const CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPgkabtEi4JZpm2E4ArE5Kjwv31hXsZ0oNtIBOyeNwp3QHHhrmPB_TB9G22r050t6LiFAorL-7ALxv/pub?output=csv";
+
+function parseCSV(text: string): string[][] {
+  return text
+    .trim()
+    .split(/\r?\n/)
+    .map((line) => {
+      const cells: string[] = [];
+      let cur = "";
+      let inQ = false;
+      for (const ch of line) {
+        if (ch === '"') { inQ = !inQ; }
+        else if (ch === "," && !inQ) { cells.push(cur); cur = ""; }
+        else { cur += ch; }
+      }
+      cells.push(cur);
+      return cells;
+    })
+    .filter((row) => row.some((c) => c.trim() !== ""));
+}
+
 export default function Home() {
+  const [sheetRows, setSheetRows] = useState<string[][]>([]);
+  const [sheetLoading, setSheetLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(CSV_URL)
+      .then((r) => r.text())
+      .then((csv) => { setSheetRows(parseCSV(csv)); setSheetLoading(false); })
+      .catch(() => setSheetLoading(false));
+  }, []);
+
   return (
     <div className="min-h-screen" style={{ fontFamily: "var(--font-godwit)" }}>
 
@@ -307,9 +340,20 @@ export default function Home() {
               <p className="text-xl font-bold mb-1 text-center text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
                 Kelompok I
               </p>
-              <p className="text-sm text-center mb-6 text-[#6B879A]">
+              <p className="text-sm text-center mb-4 text-[#6B879A]">
                 Mata Kuliah Agama Islam K-23<br />Institut Teknologi Bandung
               </p>
+              <div className="flex justify-center mb-6">
+                <div className="relative w-24 h-24">
+                  <Image
+                    src="/Logo_Institut_Teknologi_Bandung.png"
+                    alt="Logo Institut Teknologi Bandung"
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
+              </div>
               <div className="space-y-2">
                 {[
                   { role: "Ketua", name: "Muhammad Kemal Setiadi", npm: "13723071" },
@@ -466,17 +510,34 @@ export default function Home() {
             <p className="text-sm text-muted-text mb-6">
               Sebagai wujud transparansi, berikut laporan dana donasi yang telah terkumpul dan penggunaannya.
             </p>
-            <div className="w-full overflow-hidden rounded-2xl border border-primary-blue/40 shadow-md">
-              <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPgkabtEi4JZpm2E4ArE5Kjwv31hXsZ0oNtIBOyeNwp3QHHhrmPB_TB9G22r050t6LiFAorL-7ALxv/pubhtml?widget=true&headers=false"
-                className="w-full"
-                style={{ height: "480px", border: "none" }}
-                title="Laporan Keuangan Jumat Berkah"
-                loading="lazy"
-              />
-            </div>
+            {sheetLoading ? (
+              <div className="py-16 text-center text-muted-text text-sm">Memuat data laporan...</div>
+            ) : sheetRows.length === 0 ? (
+              <div className="py-16 text-center text-muted-text text-sm">Data tidak tersedia.</div>
+            ) : (
+              <div className="overflow-x-auto rounded-2xl border border-primary-blue/40 shadow-md">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-deep-text text-white">
+                      {sheetRows[0].map((cell, i) => (
+                        <th key={i} className="px-4 py-3 text-left font-semibold whitespace-nowrap">{cell}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sheetRows.slice(1).map((row, ri) => (
+                      <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-soft-sky/30"}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} className="px-4 py-2.5 text-deep-text whitespace-nowrap">{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
             <a
-              href="https://docs.google.com/spreadsheets/d/1-kcq56shkoaGJGkRjTl8GrekQ56LMm9ii7Kke27wek8/edit?gid=0#gid=0"
+              href="https://docs.google.com/spreadsheets/d/1VxWTWkFM7Hq-_VYyoZikNJSAnKwcCXOpRA6P3QDNc1s/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-5 text-sm font-semibold text-primary-blue hover:underline"
