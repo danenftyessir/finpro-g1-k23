@@ -75,7 +75,7 @@ export default function Home() {
     <div className="min-h-screen" style={{ fontFamily: "var(--font-godwit)" }}>
 
       {/* ======================= 2. HERO SECTION ======================= */}
-      <section className="px-6 pt-12 pb-20 relative overflow-hidden bg-gradient-to-b from-[#D9F3FF] to-white">
+      <section className="px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-20 relative overflow-hidden bg-linear-to-b from-soft-sky to-white">
         {/* Decorative wave blobs */}
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full opacity-20 pointer-events-none bg-[#7EC8E3] blur-[80px] translate-x-[30%] -translate-y-[30%]" />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-15 pointer-events-none bg-[#7EC8E3] blur-[100px] -translate-x-[20%] translate-y-[20%]" />
@@ -87,7 +87,7 @@ export default function Home() {
               <p className="text-sm font-medium tracking-widest uppercase mb-4 text-[#6B879A]">
                 Jumat Berkah
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-deep-text" style={{ fontFamily: "var(--font-times)" }}>
                 Bantu Hadirkan 50+ Box Makanan
                 <br />untuk Jamaah dan Masyarakat Sekitar
               </h1>
@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 3. LATAR BELAKANG ======================= */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Mengapa Program Ini Dibutuhkan?
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 4. TENTANG PROGRAM ======================= */}
-      <section id="tentang" className="py-20 px-6 bg-[#F5FBFF]">
+      <section id="tentang" className="py-12 md:py-20 px-4 sm:px-6 bg-[#F5FBFF]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Tentang Jumat Berkah
@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 5. TARGET & DAMPAK ======================= */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Target Dampak Kita
@@ -222,12 +222,12 @@ export default function Home() {
       </section>
 
       {/* ======================= 6. DETAIL KEGIATAN ======================= */}
-      <section id="detail" className="py-20 px-6 bg-[#F5FBFF]">
+      <section id="detail" className="py-12 md:py-20 px-4 sm:px-6 bg-[#F5FBFF]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Detail Pelaksanaan
           </h2>
-          <div className="shadow-lg rounded-3xl p-8 md:p-12 bg-white max-w-2xl mx-auto">
+          <div className="shadow-lg rounded-3xl p-5 sm:p-8 md:p-12 bg-white max-w-2xl mx-auto">
             {[
               { label: "Nama Program", value: "Jumat Berkah" },
               { label: "Tanggal", value: "Jumat, 8 Mei 2026" },
@@ -306,7 +306,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 7. CARA BERDONASI ======================= */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Cara Berdonasi
@@ -330,15 +330,15 @@ export default function Home() {
       </section>
 
       {/* ======================= 8. TRANSPARANSI DANA ======================= */}
-      <section className="py-20 px-6 bg-[#F5FBFF]">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-[#F5FBFF]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Estimasi Penggunaan Dana
           </h2>
           <div className="max-w-2xl mx-auto">
-            <div className="shadow-lg rounded-2xl p-8 bg-white border-l-4 border-[#7EC8E3]">
+            <div className="shadow-lg rounded-2xl p-5 sm:p-8 bg-white">
               <p className="text-sm mb-2 text-[#6B879A]">Target dana:</p>
-              <p className="text-3xl font-bold mb-6 text-[#123B5D]">
+              <p className="text-2xl md:text-3xl font-bold mb-6 text-deep-text">
                 Rp500.000 – Rp750.000
               </p>
               <p className="text-sm font-semibold mb-3 text-[#123B5D]">Dana akan digunakan untuk:</p>
@@ -346,7 +346,7 @@ export default function Home() {
                 {[
                   "Pembelian makanan/minuman",
                   "Pengemasan konsumsi",
-                  "Logistik sederhana",
+                  "Logistik",
                   "Dokumentasi kegiatan",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-[#6B879A]">
@@ -360,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 9. TIMELINE PROGRAM ======================= */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Timeline Program
@@ -398,13 +398,13 @@ export default function Home() {
       </section>
 
       {/* ======================= 10. PENYELENGGARA ======================= */}
-      <section className="py-20 px-6 bg-[#F5FBFF]">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-[#F5FBFF]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Penyelenggara
           </h2>
           <div className="max-w-xl mx-auto">
-            <div className="shadow-lg rounded-2xl p-8 bg-white">
+            <div className="shadow-lg rounded-2xl p-5 sm:p-8 bg-white">
               <p className="text-xl font-bold mb-1 text-center text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
                 Kelompok I
               </p>
@@ -432,8 +432,8 @@ export default function Home() {
                   { role: "PJ Vendor", name: "Maulidya Riana Thalia L", npm: "13122063" },
                   { role: "PJ Logistik", name: "Fairuz Dwinaufal Rasyid", npm: "12824062" },
                 ].map(({ role, name, npm }) => (
-                  <div key={role} className="flex justify-between items-center py-2.5 text-sm border-b border-[#D9F3FF] last:border-b-0">
-                    <span className="text-[#6B879A]">{role}</span>
+                  <div key={role} className="flex flex-col gap-0.5 py-3 text-sm border-b border-soft-sky last:border-b-0 sm:flex-row sm:justify-between sm:items-center sm:gap-0 sm:py-2.5">
+                    <span className="text-[#6B879A] text-xs sm:text-sm">{role}</span>
                     <span className="font-medium text-[#123B5D]">{name} <span className="font-normal text-[#6B879A]">({npm})</span></span>
                   </div>
                 ))}
@@ -444,16 +444,16 @@ export default function Home() {
       </section>
 
       {/* ======================= 11. LOKASI & PETA ======================= */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-center mb-2 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Lokasi Kegiatan
           </h2>
           <p className="text-sm text-[#6B879A] mb-8">Masjid At-Taufiq, Jl. Tubagus Ismail No.44, Sekeloa, Coblong, Bandung</p>
-          <div className="shadow-lg rounded-2xl overflow-hidden">
+          <div className="shadow-lg rounded-2xl overflow-hidden h-48 sm:h-64 md:h-90">
             <iframe
-              className="w-full"
-              style={{ height: "360px", border: "none" }}
+              className="w-full h-full"
+              style={{ border: "none" }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.035!2d107.6201464!3d-6.8851003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7bc6e0ed17b%3A0x2000000000000000!2sMasjid%20At-Taufiq!5e0!3m2!1sen!2sid!4v1714000000000!5m2!1sen!2sid"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -472,7 +472,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 12. PREVIEW VIDEO YOUTUBE ======================= */}
-      <section className="py-20 px-6 bg-[#F5FBFF]">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-[#F5FBFF]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Lihat Gambaran Kegiatan
@@ -504,7 +504,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 13. QR DONASI ======================= */}
-      <section id="donasi" className="py-20 px-6 bg-[#D9F3FF]">
+      <section id="donasi" className="py-12 md:py-20 px-4 sm:px-6 bg-[#D9F3FF]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Mari Ikut Berbagi
@@ -512,7 +512,7 @@ export default function Home() {
           <p className="text-base md:text-lg mb-10 text-[#6B879A]">
             Scan QR di bawah ini untuk ikut mendukung program Jumat Berkah.
           </p>
-          <div className="shadow-lg rounded-3xl p-8 md:p-12 bg-white max-w-md mx-auto">
+          <div className="shadow-lg rounded-3xl p-5 sm:p-8 md:p-12 bg-white max-w-md mx-auto">
             <div className="relative w-full max-w-xs mx-auto mb-6 aspect-square">
               <Image
                 src="/qris(CLOSED).png"
@@ -542,7 +542,7 @@ export default function Home() {
       </section>
 
       {/* ======================= 14. TERIMA KASIH & LAPORAN KEUANGAN ======================= */}
-      <section id="laporan" className="py-20 px-6 bg-white">
+      <section id="laporan" className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-5xl mx-auto text-center">
 
           {/* Ucapan Terima Kasih */}
@@ -566,7 +566,7 @@ export default function Home() {
           </div>
 
           {/* Laporan Keuangan */}
-          <div className="bg-[#F0FAFF] rounded-3xl p-8 md:p-10">
+          <div className="bg-[#F0FAFF] rounded-3xl p-4 sm:p-8 md:p-10">
             <div className="flex items-center justify-center gap-3 mb-2">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#123B5D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
