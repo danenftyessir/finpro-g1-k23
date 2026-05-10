@@ -468,7 +468,7 @@ export default function Home() {
             </p>
             <div className="w-full overflow-hidden rounded-2xl border border-primary-blue/40 shadow-md">
               <iframe
-                src="https://docs.google.com/spreadsheets/d/1-kcq56shkoaGJGkRjTl8GrekQ56LMm9ii7Kke27wek8/pubhtml?widget=true&headers=false"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPgkabtEi4JZpm2E4ArE5Kjwv31hXsZ0oNtIBOyeNwp3QHHhrmPB_TB9G22r050t6LiFAorL-7ALxv/pubhtml?widget=true&headers=false"
                 className="w-full"
                 style={{ height: "480px", border: "none" }}
                 title="Laporan Keuangan Jumat Berkah"
