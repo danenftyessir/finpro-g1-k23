@@ -286,6 +286,22 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Video Kegiatan */}
+          <div className="mt-8 max-w-2xl mx-auto">
+            <h3 className="text-center text-lg font-semibold mb-4 text-deep-text" style={{ fontFamily: "var(--font-times)" }}>
+              Video Kegiatan
+            </h3>
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+              <iframe
+                src="https://drive.google.com/file/d/1KlQwsEn2sxoHKEUq5uxOS3OiaeYGORLA/preview"
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay"
+                title="Video Jumat Berkah"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -499,7 +515,7 @@ export default function Home() {
           <div className="shadow-lg rounded-3xl p-8 md:p-12 bg-white max-w-md mx-auto">
             <div className="relative w-full max-w-xs mx-auto mb-6 aspect-square">
               <Image
-                src="/qris(CLOSED).jpg"
+                src="/qris(CLOSED).png"
                 alt="QR Code Donasi Jumat Berkah"
                 fill
                 className="object-contain rounded-xl"
