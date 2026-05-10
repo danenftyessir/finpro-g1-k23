@@ -43,15 +43,32 @@ function parseCSV(text: string): string[][] {
     .filter((row) => row.some((c) => c.trim() !== ""));
 }
 
+const CAROUSEL_IMAGES = [
+  "/IMG_20260508_124442 (1).jpg",
+  "/IMG_20260508_133126.jpg",
+  "/IMG_9635.jpg",
+  "/IMG_9636.jpg",
+  "/IMG_9637.jpg",
+  "/IMG_9638.jpg",
+  "/IMG_9639.jpg",
+  "/IMG_9645.jpg",
+];
+
 export default function Home() {
   const [sheetRows, setSheetRows] = useState<string[][]>([]);
   const [sheetLoading, setSheetLoading] = useState(true);
+  const [carouselIdx, setCarouselIdx] = useState(0);
 
   useEffect(() => {
     fetch(CSV_URL)
       .then((r) => r.text())
       .then((csv) => { setSheetRows(parseCSV(csv)); setSheetLoading(false); })
       .catch(() => setSheetLoading(false));
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => setCarouselIdx(i => (i + 1) % CAROUSEL_IMAGES.length), 4000);
+    return () => clearInterval(t);
   }, []);
 
   return (
@@ -226,14 +243,49 @@ export default function Home() {
                 </span>
               </div>
             ))}
-            <div className="mt-4 pt-4 border-t border-[#D9F3FF]">
-              <p className="text-sm leading-relaxed text-[#6B879A]">
-                Jl. Tubagus Ismail No.44, Sekeloa,<br />
-                Kecamatan Coblong, Kota Bandung,<br />
-                Jawa Barat 40134
-              </p>
+          </div>
+
+          {/* Carousel Dokumentasi */}
+          <div className="mt-10 max-w-2xl mx-auto">
+            <h3 className="text-center text-lg font-semibold mb-4 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
+              Dokumentasi Kegiatan
+            </h3>
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+              <Image
+                key={carouselIdx}
+                src={CAROUSEL_IMAGES[carouselIdx]}
+                alt={`Dokumentasi Jumat Berkah ${carouselIdx + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+                unoptimized
+              />
+              <button
+                onClick={() => setCarouselIdx(i => (i - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length)}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-[#123B5D] text-2xl shadow transition"
+                aria-label="Sebelumnya"
+              >&#8249;</button>
+              <button
+                onClick={() => setCarouselIdx(i => (i + 1) % CAROUSEL_IMAGES.length)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-[#123B5D] text-2xl shadow transition"
+                aria-label="Berikutnya"
+              >&#8250;</button>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-white bg-black/40 rounded-full px-3 py-1">
+                {carouselIdx + 1} / {CAROUSEL_IMAGES.length}
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-4">
+              {CAROUSEL_IMAGES.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCarouselIdx(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${i === carouselIdx ? "w-6 bg-[#123B5D]" : "w-2 bg-[#7EC8E3]"}`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
+
         </div>
       </section>
 
@@ -493,7 +545,7 @@ export default function Home() {
               memberikan manfaat nyata bagi masyarakat sekitar Masjid At-Taufiq, Coblong, Bandung.
             </p>
             <p className="mt-4 text-base md:text-lg text-muted-text max-w-2xl mx-auto leading-relaxed">
-              Semoga kebaikan Anda menjadi amal jariyah yang terus mengalir. <em className="text-primary-blue not-italic font-semibold">Jazākumullāhu Khayran.</em>
+              Semoga kebaikan Anda menjadi amal jariyah yang terus mengalir. <em className="text-primary-blue not-italic font-semibold" dir="rtl" lang="ar">جَزَاكُمُ اللَّهُ خَيْرًا</em>
             </p>
           </div>
 
