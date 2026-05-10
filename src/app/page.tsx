@@ -429,7 +429,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ======================= 14. FOOTER ======================= */}
+      {/* ======================= 14. TERIMA KASIH & LAPORAN KEUANGAN ======================= */}
+      <section id="laporan" className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+
+          {/* Ucapan Terima Kasih */}
+          <div className="mb-14">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-soft-sky mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7EC8E3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-5 text-deep-text" style={{ fontFamily: "var(--font-times)" }}>
+              Terima Kasih, Para Donatur!
+            </h2>
+            <p className="text-base md:text-lg text-muted-text max-w-2xl mx-auto leading-relaxed">
+              Atas kepercayaan dan kebaikan hati Anda, kami menyampaikan rasa terima kasih yang sebesar-besarnya.
+              Setiap donasi yang diberikan telah membantu terlaksananya program <strong className="text-deep-text">Jumat Berkah</strong> dan
+              memberikan manfaat nyata bagi masyarakat sekitar Masjid At-Taufiq, Coblong, Bandung.
+            </p>
+            <p className="mt-4 text-base md:text-lg text-muted-text max-w-2xl mx-auto leading-relaxed">
+              Semoga kebaikan Anda menjadi amal jariyah yang terus mengalir. <em className="text-primary-blue not-italic font-semibold">Jazākumullāhu Khayran.</em>
+            </p>
+          </div>
+
+          {/* Laporan Keuangan */}
+          <div className="bg-[#F0FAFF] rounded-3xl p-8 md:p-10">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#123B5D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+              <h3 className="text-2xl font-bold text-deep-text" style={{ fontFamily: "var(--font-times)" }}>
+                Laporan Keuangan
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text mb-6">
+              Sebagai wujud transparansi, berikut laporan dana donasi yang telah terkumpul dan penggunaannya.
+            </p>
+            <div className="w-full overflow-hidden rounded-2xl border border-primary-blue/40 shadow-md">
+              <iframe
+                src="https://docs.google.com/spreadsheets/d/1-kcq56shkoaGJGkRjTl8GrekQ56LMm9ii7Kke27wek8/pubhtml?widget=true&headers=false"
+                className="w-full"
+                style={{ height: "480px", border: "none" }}
+                title="Laporan Keuangan Jumat Berkah"
+                loading="lazy"
+              />
+            </div>
+            <a
+              href="https://docs.google.com/spreadsheets/d/1-kcq56shkoaGJGkRjTl8GrekQ56LMm9ii7Kke27wek8/edit?gid=0#gid=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-5 text-sm font-semibold text-primary-blue hover:underline"
+            >
+              Buka spreadsheet lengkap →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ======================= 15. FOOTER ======================= */}
       <footer className="py-10 px-6 text-center bg-[#123B5D]">
         <p className="text-sm text-white/70">
           Jumat Berkah — Masjid At-Taufiq, Coblong, Bandung
