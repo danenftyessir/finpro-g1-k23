@@ -499,7 +499,7 @@ export default function Home() {
           <div className="shadow-lg rounded-3xl p-8 md:p-12 bg-white max-w-md mx-auto">
             <div className="relative w-full max-w-xs mx-auto mb-6 aspect-square">
               <Image
-                src="/qris.jpg"
+                src="/qris(CLOSED).jpg"
                 alt="QR Code Donasi Jumat Berkah"
                 fill
                 className="object-contain rounded-xl"
