@@ -200,9 +200,18 @@ export default function Home() {
       {/* ======================= 5. TARGET & DAMPAK ======================= */}
       <section className="py-12 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
+          <h2 className="text-3xl font-bold text-center mb-6 text-[#123B5D]" style={{ fontFamily: "var(--font-times)" }}>
             Target Dampak Kita
           </h2>
+          <div className="bg-[#F5FBFF] border border-[#7EC8E3] rounded-2xl px-4 sm:px-6 py-5 mb-8 text-center">
+            <p className="text-xl md:text-2xl font-bold text-[#123B5D] leading-relaxed mb-2 break-words" style={{ fontFamily: "var(--font-times)", direction: "rtl" }}>
+              إِنَّ الْمُصَّدِّقِينَ وَالْمُصَّدِّقَاتِ وَأَقْرَضُوا اللَّهَ قَرْضًا حَسَنًا يُضَاعَفُ لَهُمْ وَلَهُمْ أَجْرٌ كَرِيمٌ
+            </p>
+            <p className="text-sm md:text-base text-[#6B879A] italic mb-1">
+              &ldquo;Sesungguhnya orang-orang yang bersedekah baik laki-laki maupun perempuan dan meminjamkan kepada Allah pinjaman yang baik, niscaya akan dilipatgandakan (pahala) kepada mereka; dan bagi mereka pahala yang mulia.&rdquo;
+            </p>
+            <p className="text-xs text-black font-semibold tracking-wide">Q.S Al-Hadid (57) : 18</p>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: "🍱", label: "50+ Box", sub: "Makanan/minuman dibagikan" },
